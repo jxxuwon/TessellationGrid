@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tessellation Grid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="title">Tessellation Grid</h1> <!-- 최상단 제목 추가 -->
+    <div id="controls">
+        <label for="imageUpload">Upload Image:</label>
+        <input type="file" id="imageUpload" accept="image/*" onchange="uploadImage(event)">
+        
+        <label for="transformSelect">Transform:</label>
+        <select id="transformSelect" onchange="setTransform(this.value)">
+            <option value="none">None</option>
+            <option value="rotate(90deg)">Rotate 90°</option>
+            <option value="rotate(180deg)">Rotate 180°</option>
+            <option value="rotate(270deg)">Rotate 270°</option>
+            <option value="scale(-1, 1)">Horizontal Flip</option>
+            <option value="scale(1, -1)">Vertical Flip</option>
+        </select>
+        
+        <label for="sizeSelect">Grid Size:</label>
+        <select id="sizeSelect" onchange="setSize(this.value)">
+            <option value="1">3x3</option>
+            <option value="3">9x9</option>
+        </select>
+    </div>
+    <div id="gridContainer">
+        <div id="grid"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
